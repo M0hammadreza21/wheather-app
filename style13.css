@@ -1,0 +1,343 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+    scroll-behavior: smooth;
+    color: inherit;
+    font-family: 'vazir';
+}
+
+
+section{
+    height: 103vh;
+    width: 103vw;
+    display: grid;
+    position: relative;
+    overflow: hidden;
+    font-family: 'vazir';
+}
+
+.choice-section{
+    position: absolute;
+    height: 103vh;
+    width: 103vw;
+    display: grid;
+    justify-items: center;
+    	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.choice-section>h1{
+    color: white;
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-shadow: 0px 11px 3px rgba(0,0,0,0.13);
+}
+
+.btn-section{
+    height: 13vh;
+    width: 81vw;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.btn-section>button{
+    height: 8.1vh;
+    width: 13vw;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: white;
+    background-color: rgba(250,250,250,0.81);
+    border-radius: 13px;
+    cursor: pointer;
+    transition: all 0.13s;
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+.btn-section>button:hover{
+    border-radius: 3px;
+    background-color: rgba(250,250,250,0.81);
+    color: #323232;
+}
+
+.btn-section>button:nth-child(1){
+    border-radius: 21px 3px 21px 3px;
+}
+
+.btn-section>button:nth-child(1):hover{
+    border-radius: 3px 21px 3px 21px;
+}
+
+.btn-section>button:nth-child(3){
+    border-radius: 3px 21px 3px 21px;
+}
+
+.btn-section>button:nth-child(3):hover{
+    border-radius: 21px 3px 21px 3px;
+}
+
+.form-section{
+    height: 41vh;
+    width: 52vw;
+    position: relative;
+    display: grid;
+    margin-bottom: 45px;
+    box-shadow: 0px 0px 1px 2px white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.form-section>form{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: grid;
+    left: -100%;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.form-section>form>h1{
+    text-transform: capitalize;
+    font-size: 2rem;
+    color: white;
+    font-weight: lighter;
+}
+
+.form-section>form>button{
+    height: 8vh;
+    border: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.form-section>form>button:hover{
+    background-color: white;
+    color: #323232;
+    border-radius: 5px;
+}
+
+.form-section>form>input{
+   height: 8vh;
+   border-radius: 5px;
+   border: 1px solid white;
+   background-color: transparent;
+   transition: all 0.5s ease-in-out;
+   padding-left: 10px;
+   font-weight: lighter;
+   font-size: 1.1rem;
+   color: white;
+   position: relative;
+}
+
+.form-section>form>input::placeholder{
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: white;
+    padding-left: 10px;
+    text-transform: capitalize;
+    transition: all 0.5s;
+}
+
+.form-section>form>input:focus::placeholder{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.form-section>form>input:focus{
+    border: none;
+    border-bottom: 1px solid white;
+    border-radius: 0px;
+    transition: all 0.5s ease-in-out;
+}
+
+section>header{
+    height: 87vh;
+    width: 87vw;
+    position: relative;
+    display: grid;
+    grid-template-rows: 10vh 35vh 35vh;
+    grid-template-columns: 0.90fr;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    box-shadow: 0px 0px 5px 5px rgba(233, 225, 225, 0.5);
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.location{
+    display: flex;
+    align-items: center;
+}
+
+.country{
+    font-weight: bold;
+    font-size: 2rem;
+    color: #323232;
+}
+
+.go-back{
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.date-time,.go-back{
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: rgba(0,0,0,0.5);
+}
+
+.first-row{
+    display: flex;
+    align-items: center;
+}
+
+.current-wheather{
+    height: 21vh;
+    width: 13vw;
+    display: grid;
+    justify-items: center;
+}
+
+.weather-img>img{
+    height: 21vh;
+}
+
+.current-wheather>span{
+    color: #323232;
+    font-weight: lighter;
+    font-size: 1.5rem;
+}
+
+.temprature{
+    height: 13vh;
+    width: 13vw;
+    display: grid;
+    grid-template-rows: 7vh 0.99fr;
+    grid-template-columns: 0.99fr;
+    text-align: center;
+    position: relative;
+}
+
+.current-temp>h1{
+    padding-top: 15px;
+    font-weight: bold;
+    font-size: 2.1rem;
+    color: #323232;
+}
+
+.min-max-temp{
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.min-max-temp>b{
+    font-size:1.7rem;
+    color: #323232;
+}
+
+.min-temp>h3{
+    font-weight: lighter;
+    font-size: 1.7rem;
+    color: rgba(0,0,0,0.5);
+}
+
+.max-temp>h3{
+    font-weight: lighter;
+    font-size: 1.7rem;
+    color: rgba(0,0,0,0.5);
+}
+
+.wind-pressure{
+    height: 18vh;
+    display: grid;
+}
+
+.wind-pressure>ul{
+    display: grid;
+}
+
+.wind-pressure>ul>li{
+    font-size: 1.3rem;
+    color: #323232;
+    font-weight: bold;
+}
+
+.wind-pressure>ul>li>span{
+    color: rgba(0,0,0,0.5);
+}
+
+.sec-row{
+    display: grid;
+    grid-template-rows: 0.99fr;
+    grid-template-columns: 0.99fr;
+}
+
+.sec-row>ul{
+    display: flex;
+    align-items: center;
+}
+
+.sec-row>ul>li{
+    display: grid;
+    justify-items: center;
+}
+
+.sec-row>ul>li>img{
+    height: 13vh;
+    width: 7vw;
+}
+
+.dt-txt{
+    padding-top: 10px;
+    font-weight: lighter;
+    font-size: 1.1rem;
+    color: #323232;
+}
+
+.next-day-temp{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 5vh;
+}
+
+.next-day-temp>h3{
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: rgba(0,0,0,0.52);
+}
+
+.clear-sky-gif,.clouds-gif,.rain-gif,.snow-gif{
+    position: absolute;
+    height: 103vh;
+    width: 103vw;
+    opacity: 0;
+    visibility: hidden;
+}

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Web App</title>
+    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css">
+    <link rel="stylesheet" href="style13.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/1ba2cf90f3.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <section>
+        <main class="choice-section">
+<script>
+getPersianDate = (format) => { 
+  let week = new Array("يكشنبه", "دوشنبه", "سه شنبه", "چهارشنبه", "پنج شنبه", "جمعه", "شنبه")
+  let months = new Array("فروردين", "ارديبهشت", "خرداد", "تير", "مرداد", "شهريور", "مهر", "آبان", "آذر", "دي", "بهمن", "اسفند");
+  let today = new Date();
+  let d = today.getDay();
+  let day = today.getDate();
+  let month = today.getMonth() + 1;
+  let year = today.getYear();
+  year = (window.navigator.userAgent.indexOf('MSIE') > 0) ? year : 1900 + year;
+  if (year == 0) {
+      year = 2000;
+  }
+  if (year < 100) {
+      year += 1900;
+  }
+  y = 1;
+  for (i = 0; i < 3000; i += 4) {
+      if (year == i) {
+          y = 2;
+      }
+  }
+  for (i = 1; i < 3000; i += 4) {
+      if (year == i) {
+          y = 3;
+      }
+  }
+  if (y == 1) {
+      year -= ((month < 3) || ((month == 3) && (day < 21))) ? 622 : 621;
+      switch (month) {
+          case 1:
+              (day < 21) ? (month = 10, day += 10) : (month = 11, day -= 20);
+              break;
+          case 2:
+              (day < 20) ? (month = 11, day += 11) : (month = 12, day -= 19);
+              break;
+          case 3:
+              (day < 21) ? (month = 12, day += 9) : (month = 1, day -= 20);
+              break;
+          case 4:
+              (day < 21) ? (month = 1, day += 11) : (month = 2, day -= 20);
+              break;
+          case 5:
+          case 6:
+              (day < 22) ? (month -= 3, day += 10) : (month -= 2, day -= 21);
+              break;
+          case 7:
+          case 8:
+          case 9:
+              (day < 23) ? (month -= 3, day += 9) : (month -= 2, day -= 22);
+              break;
+          case 10:
+              (day < 23) ? (month = 7, day += 8) : (month = 8, day -= 22);
+              break;
+          case 11:
+          case 12:
+              (day < 22) ? (month -= 3, day += 9) : (month -= 2, day -= 21);
+              break;
+          default:
+              break;
+      }
+  }
+  if (y == 2) {
+      year -= ((month < 3) || ((month == 3) && (day < 20))) ? 622 : 621;
+      switch (month) {
+          case 1:
+              (day < 21) ? (month = 10, day += 10) : (month = 11, day -= 20);
+              break;
+          case 2:
+              (day < 20) ? (month = 11, day += 11) : (month = 12, day -= 19);
+              break;
+          case 3:
+              (day < 20) ? (month = 12, day += 10) : (month = 1, day -= 19);
+              break;
+          case 4:
+              (day < 20) ? (month = 1, day += 12) : (month = 2, day -= 19);
+              break;
+          case 5:
+              (day < 21) ? (month = 2, day += 11) : (month = 3, day -= 20);
+              break;
+          case 6:
+              (day < 21) ? (month = 3, day += 11) : (month = 4, day -= 20);
+              break;
+          case 7:
+              (day < 22) ? (month = 4, day += 10) : (month = 5, day -= 21);
+              break;
+          case 8:
+              (day < 22) ? (month = 5, day += 10) : (month = 6, day -= 21);
+              break;
+          case 9:
+              (day < 22) ? (month = 6, day += 10) : (month = 7, day -= 21);
+              break;
+          case 10:
+              (day < 22) ? (month = 7, day += 9) : (month = 8, day -= 21);
+              break;
+          case 11:
+              (day < 21) ? (month = 8, day += 10) : (month = 9, day -= 20);
+              break;
+          case 12:
+              (day < 21) ? (month = 9, day += 10) : (month = 10, day -= 20);
+              break;
+          default:
+              break;
+      }
+  }
+  if (y == 3) {
+      year -= ((month < 3) || ((month == 3) && (day < 21))) ? 622 : 621;
+      switch (month) {
+          case 1:
+              (day < 20) ? (month = 10, day += 11) : (month = 11, day -= 19);
+              break;
+          case 2:
+              (day < 19) ? (month = 11, day += 12) : (month = 12, day -= 18);
+              break;
+          case 3:
+              (day < 21) ? (month = 12, day += 10) : (month = 1, day -= 20);
+              break;
+          case 4:
+              (day < 21) ? (month = 1, day += 11) : (month = 2, day -= 20);
+              break;
+          case 5:
+          case 6:
+              (day < 22) ? (month -= 3, day += 10) : (month -= 2, day -= 21);
+              break;
+          case 7:
+          case 8:
+          case 9:
+              (day < 23) ? (month -= 3, day += 9) : (month -= 2, day -= 22);
+              break;
+          case 10:
+              (day < 23) ? (month = 7, day += 8) : (month = 8, day -= 22);
+              break;
+          case 11:
+          case 12:
+              (day < 22) ? (month -= 3, day += 9) : (month -= 2, day -= 21);
+              break;
+          default:
+              break;
+      }
+  }
+  if(format===null || format===undefined)
+    return `${week[d]} ${day} ${months[month - 1]} ${year}`
+  if(format==="y/m/d")
+    return `${year}/${month}/${day}`;
+  if(format==="d/m/y")
+    return `${day}/${month}/${year}`;
+}
+document.write(getPersianDate());
+//document.write(getPersianDate("y/m/d"));
+//document.write(getPersianDate("d/m/y"));
+////////////////////////////////////////////////////////////////////////////////
+</script>
+            <h1>دریافت وضعیت آب و هوا از چند طریق</h1>
+            <div class="btn-section">
+                <button class="city-btn"> نام شهر </button>
+                <button class="geo-btn"> مختصات جغرافیایی </button>
+                <button class="zipcode-btn"> زیپ کد </button>
+            </div>
+
+            <section class="form-section">
+
+                <form class="city-form">
+
+                    <h1>دریافت گزارش آب و هوا با ورود نام شهر</h1>
+
+                    <input type="text" name="city" id="city-input" placeholder="type city name">
+
+                    <button type="button" class="city-form-btn" >دریافت گزارش</button>
+
+                </form>
+
+                <form class="geo-form">
+                    <h1>دریافت گزارش آب و هوا از طریق مختصات جغرافیایی</h1>
+                    <input type="number" name="long" id="long-input" placeholder="type longitude">
+                    <input type="number" name="lat" id="lat-input" placeholder="type latitude">
+                    <button type="button" class="geo-form-btn" >دریافت گزارش</button>
+                </form>
+
+                <form class="zipcode-form">
+                    <h1>دریافت گزارش آب و هوا از طریق زیپ کد</h1>
+                    <input type="number" name="zipcode" id="zipcode-input" placeholder="type zipcode">
+                    <input type="text" name="countrycode" id="countrycode-input" placeholder="type countrycode">
+                    <button type="button" class="zipcode-form-btn" >دریافت گزارش</button>
+                </form>
+            </section>
+
+        </main>
+        <header>
+
+            <div class="location">
+                <h2 class="go-back"><i class="fas fa-arrow-left"></i></h2>
+                <h1 class="country"></h1>
+                <h2 class="datetime"><script>document.write(getPersianDate());</script></h2>
+            </div>
+
+            <div class="first-row">
+
+                <div class="current-wheather">
+                    <div class="weather-img"></div>
+                    <span class="weather-descrip"></span>
+                </div>
+
+                <div class="temprature">
+                    <div class="current-temp"></div>
+                    <div class="min-max-temp">
+                        <div class="min-temp"></div><b>/</b>
+                        <div class="max-temp"></div>
+                    </div>
+                </div>
+
+                <div class="wind-pressure">
+
+                    <ul>
+                        <li>وزش باد:<span class="wind"></span></li>
+                        <li>Humidity:<span class="humi"></span></li>
+                        <li>فشار:<span class="pre"></span></li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="sec-row">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
+        </header>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
